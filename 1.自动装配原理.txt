@@ -1,0 +1,14 @@
+springboot自动装配主要帮我们做了2个事情
+1， 自动添加扫描包
+2， 自动配置bean  如 dataSource, SqlSessionFactoryBeanName 等， 基本原理是以注解+配置文件的方式将bean添加如扫描包
+
+1.SpringBootApplication
+通过@SpringBootApplication可发现 存在两个注解 @SpringBootConfiguration, @EnableAutoConfiguration
+
+2.@SpringBootConfiguration 存在@Configuration 将该配置类导入spring容器管理
+
+3.@EnableAutoConfiguration 
+	@AutoConfigurationPackage          寻找配置类的包，并把包下及子包加入扫描器
+	@Import       寻找META-INF/spring.factories 该文件存在所有加载类的全类名
+		     它会根据这些全类名，加载这些类， 同时这些类上存在一些注解，如 @ConditionalOnClass等
+		     只有这些注解条件满足时才允许被加载

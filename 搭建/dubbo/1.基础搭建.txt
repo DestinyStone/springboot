@@ -1,0 +1,23 @@
+1. 新建一个空maven工程， 即普通maven工程删除src目录
+2. 在新建的maven工程中依次建立  testdubbo-controller, testdubbo-service 的springboot工程
+3，修改 testdubbo-controller 的端口为 8081， testdubbo-service 的端口为 8082
+4， 
+
+
+
+架包
+<dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>2.5.10</version>
+</dependency>
+<dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>3.4.14</version>
+</dependency>
+<dependency>
+                <groupId>com.github.sgroschupf</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>0.1</version>
+</dependency>
