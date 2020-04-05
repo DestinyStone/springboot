@@ -3,7 +3,7 @@ springboot自动装配主要帮我们做了2个事情
 2， 自动配置bean  如 dataSource, SqlSessionFactoryBeanName 等， 基本原理是以注解+配置文件的方式将bean添加如扫描包
 
 1.SpringBootApplication
-通过@SpringBootApplication可发现 存在两个注解 @SpringBootConfiguration, @EnableAutoConfiguration
+通过@SpringBootApplication可发现 存在两个注解 @SpringBootConfiguration, @EnableAutoConfiguration0
 
 2.@SpringBootConfiguration 存在@Configuration 将该配置类导入spring容器管理
 
