@@ -15,3 +15,5 @@ mybatis.type-aliases-package=com.destiny.maven.testspringaop.bean
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.29</version>
 </dependency>
+
+application类中 增加注解 @MapperScan("mapper 包路径")  该类相当于 bean中 MapperScannerConfiguration 
