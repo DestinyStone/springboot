@@ -1,0 +1,20 @@
+1.导入依赖
+<dependency>
+	<groupId>com.github.tobato</groupId>
+	<artifactId>fastdfs-client</artifactId>
+	<version>1.26.1-RELEASE</version>
+</dependency>
+
+2. 启动类引入配置
+@Import(FdfsClientConfig.class)
+
+3. 配置信息
+fdfs.so-timeout=1500
+fdfs.connect-timeout=6000
+fdfs.pool.jmx-enabled=false
+#跟踪器地址
+fdfs.tracker-list: 127.0.0.1:22122
+
+4. 使用 类 
+@Autowired
+private FastFileStorageClient fastFileStorageClient;
