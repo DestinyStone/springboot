@@ -11,8 +11,9 @@
 3. 配置信息
 fdfs.so-timeout=1500
 fdfs.connect-timeout=6000
+# 使用连接池，  必须配
 fdfs.pool.jmx-enabled=false
-#跟踪器地址
+#跟踪器地址， 必须配
 fdfs.tracker-list: 127.0.0.1:22122
 
 4. 使用 类 
