@@ -1,0 +1,4 @@
+# 上传文件总的最大值
+spring.http.multipart.max-request-size=10mb
+# 单个文件的最大值
+spring.http.multipart.max-file-size=1mb
