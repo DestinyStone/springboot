@@ -1,0 +1,14 @@
+@RunWith(SpringRunner.class)          //必写
+@SpringBootTest(classes = DestinyControllerApplication.class)   // 这里是 启动类
+public class DestinyControllerApplicationTests {    //必须为public
+
+    @Test
+    public void contextLoads() {                   //必须为public
+        Persion persion = new Persion();
+        persion.setId(1);
+        persion.setName("zs");
+        String str = JSONObject.toJSONString(persion);
+        System.out.println(str);
+    }
+
+}

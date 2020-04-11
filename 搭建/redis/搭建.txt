@@ -1,0 +1,26 @@
+1. pom依赖
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+</dependency>
+
+2. 配置信息
+#数据库索引
+spring.redis.database=0
+#redis服务器地址
+spring.redis.host=www.destony.top
+#redis服务器端口
+spring.redis.port=6379
+#redis密码(默认为空)
+spring.redis.password=
+
+3. 使用
+@Autowired
+private RedisTemplate<Object, Object> redisTemplate;          //这个在key， value 存储时， 会先序列化在存储
+或
+@Autowired
+private StringRedisTemplate redisTemplate;
