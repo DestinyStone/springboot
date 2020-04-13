@@ -1,0 +1,15 @@
+1. 导入maven依赖 
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+</dependency>
+
+2. 配置信息
+spring.data.elasticsearch.cluster-nodes=39.102.40.140:9300
+spring.data.elasticsearch.cluster-name=docker-cluster           #在 elasticsearch.yml 可查看
+
+3. 使用
+1. 文档操作 
+接口 继承  ElasticsearchRepository
+2. 查询操作
+ElasticsearchTemplate
