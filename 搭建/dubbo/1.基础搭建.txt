@@ -1,23 +1,36 @@
-1. 新建一个空maven工程， 即普通maven工程删除src目录
-2. 在新建的maven工程中依次建立  testdubbo-controller, testdubbo-service 的springboot工程
-3，修改 testdubbo-controller 的端口为 8081， testdubbo-service 的端口为 8082
-4， 
-
-
-
-架包
+jar包
 <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>2.5.10</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.0</version>
 </dependency>
 <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>3.4.14</version>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.10</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
 </dependency>
 <dependency>
-                <groupId>com.github.sgroschupf</groupId>
-                <artifactId>zkclient</artifactId>
-                <version>0.1</version>
+            <groupId>com.gitee.reger</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+            <version>1.0.10</version>
 </dependency>
+
+
+配置
+# dubbo的配置
+# dubbo中的服务名称
+spring.dubbo.application=destiny-manage-service
+# dubbo的通讯协议名称
+spring.dubbo.protocol.name=dubbo
+# zookeeper注册中心的地址
+spring.dubbo.registry.address=www.destony.top:2181
+# zookeeper的通讯协议的名称
+spring.dubbo.registry.protocol=zookeeper
+# dubbo的服务的扫描路径
+spring.dubbo.base-package=org.destiny.maven.destinymanageservice
