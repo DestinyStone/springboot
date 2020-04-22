@@ -1,0 +1,24 @@
+1. 加入依赖
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+</dependency>
+
+2.设置
+a。开启idea自动编译(静态)     勾选Build Project automatically
+File->settings->Compiler->Build Project automatically
+b.  开启idea自动编译(动态)
+快捷键 ctrl + shift + alt + /,选择Registry,
+勾上 compiler.autoMake allow when app running  (自动编译)
+勾上  compile.document.save.trigger.delay （ 自动更新文件）
+c. 开启idea热部署策略
+顶部菜单(run 左边) ->Edit Comfiurations->springboot插件->目标项目-》勾选热跟新
+
+3. 关闭浏览器缓存
+F12->Network-> 勾选Disable cache
+
+
+注意 热部署 需要重新builder一些
+当前项目builder  ctrl+F9
+全部羡慕builder ctrl+shift+F9
