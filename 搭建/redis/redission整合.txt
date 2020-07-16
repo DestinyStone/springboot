@@ -1,0 +1,53 @@
+0. 导入jar
+<dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.8.2</version>
+</dependency>
+
+<dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.8.2</version>
+</dependency>
+
+1. 创建 redission-config.yml 文件 加入以下内容
+#Redisson配置
+singleServerConfig:
+  address: "redis://www.destony.top:6379"
+  password: null
+  clientName: null
+  database: 0 #选择使用哪个数据库0~15
+  idleConnectionTimeout: 10000
+  pingTimeout: 1000
+  connectTimeout: 10000
+  timeout: 3000
+  retryAttempts: 3
+  retryInterval: 1500
+  reconnectionTimeout: 3000
+  failedAttempts: 3
+  subscriptionsPerConnection: 5
+  subscriptionConnectionMinimumIdleSize: 1
+  subscriptionConnectionPoolSize: 50
+  connectionMinimumIdleSize: 32
+  connectionPoolSize: 64
+  dnsMonitoringInterval: 5000
+  #dnsMonitoring: false
+
+threads: 0
+nettyThreads: 0
+codec:
+  class: "org.redisson.codec.JsonJacksonCodec"
+transportMode: "NIO"
+
+2. 在主配置配中增加
+   @Bean
+    public RedissonClient redisson() throws IOException {
+        // 本例子使用的是yaml格式的配置文件，读取使用Config.fromYAML，如果是Json文件，则使用Config.fromJSON
+        Config config = Config.fromYAML(DestinyServiceApplication.class.getClassLoader().getResource("redisson-config.yml"));
+        return Redisson.create(config);
+    }
+
+3， 使用 RedissionClient 即可
+@Autowired
+RedissionClient
