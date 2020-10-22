@@ -1,0 +1,16 @@
+@ApiModel("用户类")   类上增加注解
+@ApiModelProperty("用户名")  方法增加注解
+
+
+@Api(tags="") 类上增加注解
+
+常用
+@ApiOperation("")  
+	value 方法大致说明
+	notes 更加详细的锁门
+	如 ： 查询用户， 根据名称查询用户
+	
+常用
+@ApiParam(defaultValue = "")
+	参数上增加注解
+	如 @ApiParam(defaultValue = "10") @RequestParam("id") String id

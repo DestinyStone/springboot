@@ -1,0 +1,18 @@
+1. 启动类开启定时任务
+@SpringBootApplication
+@EnableScheduling
+public class Test006Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Test006Application.class, args);
+    }
+
+}
+
+2. 写定时任务
+@Configuration
+public class RunTime {
+    @Scheduled(cron = "0/1 * * * * ?")
+    public void run() {
+        System.out.println("test");
+}

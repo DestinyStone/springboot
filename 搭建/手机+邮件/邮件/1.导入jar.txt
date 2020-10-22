@@ -1,0 +1,20 @@
+1.导入jar
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context-support</artifactId>
+</dependency>
+
+2.配置
+spring.mail.username=2777679537@qq.com
+spring.mail.password=rgpbyqgcbjpedcfe   //授权码
+spring.mail.host=smtp.qq.com
+spring.mail.port=465
+spring.mail.default-encoding=UTF-8
+spring.mail.properties.mail.smtp.ssl.enable=true
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true

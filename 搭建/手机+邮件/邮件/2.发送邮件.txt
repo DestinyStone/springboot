@@ -1,0 +1,29 @@
+1.提供类
+@Autowired
+private JavaMailSender mailsender;
+
+2.获取邮件类
+MimeMessage mimeMessage = mailsender.createMimeMessage();
+MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+
+
+3.编写简单邮件
+helper.setSubject("邮件主题")
+helper.setText("邮件内容")
+helper.setTo("邮件账号")  //设置收件人账号
+helper.setFrom("邮件账号") //设置发件人账号
+
+
+4. 发送邮件
+mailsender.send(mimeMessage)
+
+other. 发送html邮件
+helper.setText("<div>2<div>", true);  //开启html标签识别
+
+other. 发送内含图片的邮件
+MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+helper.setText("<img src="路径"></img>")
+
+other. 发送附件邮件
+MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true); //开启多附件
+helper。addAttachment("文件名称", new File("文件path"))

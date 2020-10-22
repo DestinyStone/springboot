@@ -1,0 +1,6 @@
+默认显示规则
+1. controller返回一个实体类
+2. 该实体类上具有set, get 方法
+
+@ApiModel("用户类")   类上增加注解
+@ApiModelProperty("用户名")  方法增加注解
